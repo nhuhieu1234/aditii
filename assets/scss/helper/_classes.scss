@@ -1,0 +1,10 @@
+.btn-buy {
+	background:  $color-green2;
+	color: $color-white !important;
+	font-weight: bold;
+	font-size: 14px !important;
+	border-radius: 2px;
+	&:hover {
+		background-color: $color-green3;
+	}
+}

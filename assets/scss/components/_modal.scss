@@ -1,0 +1,23 @@
+#myModal {
+    .modal-dialog {
+        .modal-content {
+            border-radius: 4px;
+            .modal-header {
+                text-align: center;
+                .modal-title {
+                    color: $color-green;
+                    font-weight: bold;
+                    font-family: $openSans-regular;
+                }
+            }
+            .modal-body {
+                .form-group {
+                    margin: 0;
+                    .form-control {
+                    	border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

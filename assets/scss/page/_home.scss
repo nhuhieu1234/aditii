@@ -1,0 +1,576 @@
+.wrapper {
+    #header {
+        @include breakpoint (small-tablet) {
+            position: fixed;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+        }
+        .menu-top {
+            padding: 15px 0;
+            @include breakpoint (small-tablet) {
+                padding: 10px 0;
+            }
+            @include breakpoint (phone) {
+                padding: 5px 0;
+            }
+            .logo {
+                height: 35px;
+                a {
+                    width: 120px;
+                    height: 100%;
+                    display: inline-block;
+                    background: url(../img/logo.png) no-repeat;
+                    background-position: center;
+                    background-size: 75%;
+                    @include breakpoint (phone) {
+                        width: 90px;
+                    }
+                }
+            }
+            .top-right {
+                @include breakpoint (small-tablet) {
+                    float: right;
+                }
+                padding: 0 20px;
+                .search {
+                    @include breakpoint (small-tablet) {
+                        float: left;
+                        padding: 0;
+                    }
+                    .input-group {
+                        @include breakpoint (small-tablet) {
+                            display: none;
+                        }
+                        #exampleInputAmount {
+                            border-right: 0;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                        }
+                        .input-group-addon {
+                            background: transparent;
+                            font-size: 22px;
+                            padding: 3px 12px;
+                            a {
+                                color: $color-gray4;
+                                &:hover {
+                                    color: $color-gray2;
+                                }
+                            }
+                        }
+                        #exampleInputAmount,
+                        .input-group-addon {
+                            border-radius: 1px;
+                            border-color: $color-gray4;
+                        }
+                    }
+                    .btn-modal-search {
+                        display: none;
+                        @include breakpoint (small-tablet) {
+                            display: inline-block;
+                        }
+                        a {
+                            cursor: pointer;
+                            color: $color-gray5;
+                            font-size: 20px;
+                            color: $color-gray;
+                            @include breakpoint (phone) {
+                                font-size: 18px;
+                            }
+                            &:hover {
+                                color: $color-gray2;
+                            }
+                            i {
+                                // vertical-align: -moz-middle-with-baseline;
+                                vertical-align: middle;
+                                @include breakpoint (phone) {
+                                    vertical-align: bottom;
+                                    vertical-align: -webkit-baseline-middle;
+                                }
+                            }
+                        }
+                    }
+                }
+                .button-buy {
+                    text-align: right;
+                    @include breakpoint (small-tablet) {
+                        float: left;
+                    }
+                    a {
+                        font-family: $bebasNeue-regular;
+                        font-size: 23px;
+                        color: $color-gray2;
+                        font-weight: bold;
+                        &:hover {
+                            i {
+                                color: $color-green3;
+                            }
+                        }
+                        @include breakpoint (small-tablet) {
+                            font-size: 20px;
+                            line-height: 33px;
+                        }
+                        @include breakpoint (phone) {
+                            font-size: 0;
+                        }
+                        i {
+                            // vertical-align: -moz-middle-with-baseline;
+                            vertical-align: middle;
+                            padding-right: 3%;
+                            font-size: 34px;
+                            color: $color-green;
+                            @include breakpoint (small-tablet) {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+                .btn-toggle {
+                    display: none;
+                    @include breakpoint (small-tablet) {
+                        display: inline-block;
+                    }
+                    .btn {
+                        padding: 0 12px 0 0;
+                        font-size: 23px;
+                        color: $color-gray;
+                        @include breakpoint (phone) {
+                            font-size: 15px;
+                            line-height: 30px;
+                        }
+                        &:hover {
+                            color: $color-gray2;
+                        }
+                        i {
+                            font-size: 27px; // vertical-align: -moz-middle-with-baseline;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+        .navbar {
+            min-height: 100%;
+            background: $color-green3;
+            border-color: $color-green4;
+            margin: 0;
+            border-radius: 0;
+            li {
+                padding: 10px 0;
+                &:hover {
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+                    background: $color-white;
+                    a {
+                        color: $color-green;
+                    }
+                }
+                a {
+                    font-family: $bebasNeue-regular;
+                    color: $color-white;
+                    font-weight: bold;
+                    padding: 0 24px;
+                    font-size: 21px;
+                    border-right: 2px solid $color-white;
+                    @include breakpoint (small-desktop) {
+                        font-size: 14px;
+                    }
+                    @include breakpoint (tablet) {
+                        padding: 0 14px;
+                        font-size: 13px;
+                    }
+                    @include breakpoint (small-tablet) {
+                        border: 0;
+                    }
+                }
+                &:last-child {
+                    a {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        .slide1 {
+            font-family: $bebasNeue-regular;
+            background: url(../img/bg.png);
+            padding: 4% 0 1% 0;
+            color: $color-white;
+            @include breakpoint (small-tablet) {
+                padding-top: 75px;
+            }
+            .lazy {
+                .slick-arrow {
+                    display: none !important;
+                }
+                .img-slide {
+                    width: 35%;
+                    float: left;
+                    padding: 0 0 0 10%;
+                    @include breakpoint (tablet) {
+                        padding: 0;
+                        padding-right: 5%;
+                    }
+                    .wrp {
+                        height: 0;
+                        overflow: hidden;
+                        position: relative;
+                        padding-top: 120%;
+                        img {
+                            width: 100%;
+                            height: auto;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                        }
+                    }
+                }
+                .text-slide {
+                    width: 65%;
+                    float: left;
+                    padding: 0 10% 0 10%;
+                    @include breakpoint (tablet) {
+                        padding: 0;
+                    }
+                    .wrp {
+                        .title {
+                            font-weight: bold;
+                            font-size: 61px;
+                            line-height: 1;
+                            @include breakpoint (small-desktop) {
+                                font-size: 50px;
+                            }
+                            @include breakpoint (tablet) {
+                                font-size: 45px;
+                            }
+                            @include breakpoint (small-tablet) {
+                                font-size: 35px;
+                            }
+                            @include breakpoint (phone) {
+                                font-size: 25px;
+                            }
+                            @include breakpoint (mid-phone) {
+                                font-size: 20px;
+                            }
+                        }
+                        .des {
+                            font-family: $openSans-regular;
+                            font-size: 17px;
+                            @include breakpoint (small-desktop) {
+                                font-size: 15px;
+                            }
+                            @include breakpoint (small-tablet) {
+                                font-size: 14px;
+                            }
+                            @include breakpoint (phone) {
+                                font-size: 12px;
+                            }
+                        }
+                        .btn-shop {
+                            margin-top: 7%;
+                            a {
+                                background: transparent;
+                                border: 2px solid $color-white;
+                                color: $color-white;
+                                font-weight: bold;
+                                padding: 0.1% 6%;
+                                border-radius: 6px;
+                                font-size: 27px;
+                                &:hover {
+                                    background: $color-white;
+                                    color: $color-green;
+                                    -webkit-transition: all .3s;
+                                    transition: all .3s;
+                                }
+                                @include breakpoint (small-desktop) {
+                                    font-size: 25px;
+                                }
+                                @include breakpoint (tablet) {
+                                    font-size: 20px;
+                                    padding: 0.1% 4%;
+                                }
+                                @include breakpoint (small-tablet) {
+                                    font-size: 17px;
+                                }
+                                @include breakpoint (phone) {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slide2 {
+            font-family: $bebasNeue-regular;
+            .regular {
+                margin: 0;
+                .item-slide {
+                    padding: 15px 0;
+                    border: 2px solid transparent;
+                }
+
+                .img-slide {
+                    float: left;
+                    width: 50%;
+                    position: relative;
+                    height: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    padding-top: 50%;
+                    overflow: hidden;
+                    @include breakpoint (mid-phone) {
+                        width: 100%;
+                        padding-top: 100%;
+                    }
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .text-slide {
+                    float: left;
+                    width: 50%;
+                    padding-left: 10px;
+                    height: 100%;
+                    padding-top: 10%;
+                    @include breakpoint (tablet) {
+                        padding-top: 0;
+                    }
+                    @include breakpoint (mid-phone) {
+                        width: 100%;
+                        padding: 0;
+                        padding-top: 10%;
+                        text-align: center;
+                    }
+                    .title {
+                        text-transform: uppercase;
+                        font-size: 17px;
+                        font-weight: bold;
+                        color: $color-gray;
+                        @include breakpoint (tablet) {
+                            font-size: 15px;
+                        }
+                        @include breakpoint (tablet) {
+                            font-size: 13px;
+                        }
+                        @include breakpoint (phone) {
+                            font-size: 11px;
+                        }
+                    }
+                }
+                .btn-buy {
+                    @include breakpoint (tablet) {
+                        padding: 5px 7px;
+                        font-size: 12px !important;
+                    }
+                    @include breakpoint (phone) {
+                        padding: 3px 5px;
+                        font-size: 9px !important;
+                    }
+                }
+                .item-bor {
+                    border-left-color: $color-gray6;
+                    border-right-color: $color-gray6;
+                    @include breakpoint (phone) {
+                       border: none;
+                    }
+                }
+            }
+        }
+        .products {
+            font-family: $bebasNeue-regular;
+            .tab {
+                background: url(../img/bg.png);
+                color: $color-white;
+                h2 {
+
+                    margin: 0;
+                    padding: 1.5% 0;
+                    font-size: 31px;
+                    @include breakpoint (tablet) {
+                        font-size: 25px;
+                    }
+                    @include breakpoint (small-tablet) {
+                        font-size: 20px;
+                    }
+                    @include breakpoint (phone) {
+                        font-size: 15px;
+                    }
+                }
+                .container {
+                    padding: 0 100px;
+                    @include breakpoint (tablet) {
+                        padding: 0 15px;
+                    }
+                }
+            }
+            .content {
+                padding: 3% 0;
+                text-align: center;
+                a,
+                p {
+                    font-size: 22px;
+                    @include breakpoint (small-desktop) {
+                        font-size: 20px;
+                    }
+                    @include breakpoint (tablet) {
+                        font-size: 18px;
+                    }
+                    @include breakpoint (phone) {
+                        font-size: 15px;
+                    }
+                }
+                .container {
+                    padding: 0 100px;
+                    @include breakpoint (tablet) {
+                        padding: 0 15px;
+                    }
+                    .item {
+                        @include breakpoint (phone) {
+                            width: 50%;
+                        }
+                    }
+                }
+                .thumbnail {
+                    margin-bottom: 15%;
+                    padding: 30px;
+                    border-bottom: 3px solid $color-green3;
+                    border-radius: 2px;
+                    &:hover {
+                        -webkit-box-shadow: 1px 4px 11px -5px;
+                        box-shadow: 1px 4px 11px -5px;
+                    }
+                    @include breakpoint (tablet) {
+                        padding: 15px;
+                    }
+                    .img-pro {
+                        position: relative;
+                        height: 0;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        padding-top: 90%;
+                        overflow: hidden;
+                        &:hover {
+                            overflow: hidden;
+                            img {
+                                -webkit-transform: scale(1.2);
+                                transform: scale(1.2);
+                                -webkit-transition: .3s ease-in-out;
+                                transition: .3s ease-in-out;
+                            }
+                        }
+                        img {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .title-pro {
+                        margin: 2% 0;
+                        a {
+                            color: $color-gray;
+                            font-weight: bold;
+                            &:hover {
+                                color: $color-green;
+                                -webkit-transition: all .3s;
+                                transition: all .3s;
+                            }
+                        }
+                    }
+                    .price {
+                        p {
+                            display: inline-block;
+                            margin-right: 4%;
+                            color: $color-gray;
+                            font-weight: bold;
+                        }
+                        a {
+                            border-radius: 2px;
+                            @include breakpoint (small-tablet) {
+                                font-size: 0 !important;
+                                padding: 3% 8%;
+                            }
+                            i {
+                                display: none;
+                                @include breakpoint (small-tablet) {
+                                    display: inline-block;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #footer {
+        background: url(../img/bg.png);
+        color: $color-white;
+        font-family: $openSans-regular;
+        a,
+        p {
+            @include breakpoint (small-tablet) {
+                font-size: 13px;
+            }
+            @include breakpoint (phone) {
+                font-size: 12px;
+            }
+        }
+        .container {
+            padding: 2% 0;
+            .title-footer {
+                font-family: $bebasNeue-regular;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 5%;
+                @include breakpoint (tablet) {
+                    font-size: 15px;
+                }
+                @include breakpoint (small-tablet) {
+                    font-size: 13px;
+                }
+            }
+            ul {
+                padding: 0;
+                li {
+                    padding-bottom: 2%;
+                    @include breakpoint (small-tablet) {
+                        padding-bottom: 0;
+                    }
+                    a {
+                        color: $color-white;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom-footer {
+            padding: 15px;
+            text-align: center;
+            background: url(../img/bg-footer.png);
+            @include breakpoint (small-tablet) {
+                padding: 2px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
